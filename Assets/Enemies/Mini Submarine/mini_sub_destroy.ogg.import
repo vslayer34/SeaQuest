@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt8esoyxx8frn"
+path="res://.godot/imported/mini_sub_destroy.ogg-b4c3803d16a172b731f4f19763b83ef3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Enemies/Mini Submarine/mini_sub_destroy.ogg"
+dest_files=["res://.godot/imported/mini_sub_destroy.ogg-b4c3803d16a172b731f4f19763b83ef3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

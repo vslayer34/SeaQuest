@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxqq5nfymstwc"
+path="res://.godot/imported/full_oxygen_alert.ogg-49d56ff30de6546e9453fcb70454d74f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/User Interface/Oxygen Bar/full_oxygen_alert.ogg"
+dest_files=["res://.godot/imported/full_oxygen_alert.ogg-49d56ff30de6546e9453fcb70454d74f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
