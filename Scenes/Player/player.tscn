@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0a14puh288eg"]
+[gd_scene load_steps=8 format=3 uid="uid://d0a14puh288eg"]
 
 [ext_resource type="Texture2D" uid="uid://cncx5ntwy2wuf" path="res://Assets/Player/player.png" id="1_7ssrc"]
+[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="2_nddxp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkkee"]
 atlas = ExtResource("1_7ssrc")
@@ -42,4 +43,5 @@ animations = [{
 position = Vector2(39, 35)
 sprite_frames = SubResource("SpriteFrames_dldol")
 autoplay = "default"
-frame_progress = 0.182777
+frame_progress = 0.779313
+script = ExtResource("2_nddxp")
