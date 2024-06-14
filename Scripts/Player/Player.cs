@@ -12,6 +12,8 @@ public partial class Player : AnimatedSprite2D
 
     private Vector2 _velocity;
 
+    private const double IDLE_ANIMATION_SPEED = 5.0;
+
 
 
     // Game Loop Methods---------------------------------------------------------------------------
@@ -30,9 +32,25 @@ public partial class Player : AnimatedSprite2D
 
     public override void _PhysicsProcess(double delta)
     {
+
         if (_velocity != Vector2.Zero)
         {
+            SpriteFrames.SetAnimationSpeed(AnimationsNames.Player.DEFAULT, IDLE_ANIMATION_SPEED * 2);
+
             GlobalPosition += _velocity.Normalized() * _speed * (float)delta;
+
+            if (_velocity.X == 0)
+            {
+                return;
+            }
+            else
+            {
+                FlipH = _velocity.X < 0;
+            }
+        }
+        else
+        {
+            SpriteFrames.SetAnimationSpeed(AnimationsNames.Player.DEFAULT, IDLE_ANIMATION_SPEED);
         }
     }
 }
