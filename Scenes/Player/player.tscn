@@ -45,3 +45,4 @@ sprite_frames = SubResource("SpriteFrames_dldol")
 autoplay = "default"
 frame_progress = 0.779313
 script = ExtResource("2_nddxp")
+_speed = 75.0
