@@ -19,4 +19,16 @@ public static class AnimationsNames
         /// </summary>
         public const string DEFAULT = "default";
     }
+
+
+    /// <summary>
+    /// Contains references to the bullet animations
+    /// </summary>
+    public static class Bullet
+    {
+        /// <summary>
+        /// Reference to the<c>"default"</c>animation
+        /// </summary>
+        public const string DEFAULT = "default";
+    }
 }
