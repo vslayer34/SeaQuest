@@ -33,5 +33,11 @@ public static class InputMapActions
         /// Reference to the<c>"move_down"</c>input action
         /// </summary>
         public const string MOVE_DOWN = "move_down";
+        
+
+        /// <summary>
+        /// Reference to the<c>"shoot"</c>input action
+        /// </summary>
+        public const string SHOOT = "shoot";
     }
 }
