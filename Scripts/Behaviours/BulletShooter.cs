@@ -27,11 +27,11 @@ public partial class BulletShooter : Node2D
 
 	private void Shoot()
 	{
-		GD.Print(ObjectPool.BulletPool.Count);
-		GD.Print(_firedBullet);
-
 		_firedBullet = ObjectPool.GetBullet();
 
-		GD.Print(_firedBullet);
+		_firedBullet.Position = GlobalPosition;
+		_firedBullet.Rotation = GlobalRotation;
+
+		// _firedBullet.Transform = GlobalTransform;
 	}
 }
