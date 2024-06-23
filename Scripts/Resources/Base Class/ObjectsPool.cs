@@ -25,7 +25,12 @@ public partial class ObjectsPool : Resource
                 {
                     bullet =  BulletScene.Instantiate() as Bullet;
                     BulletPool.Add(bullet);
+                    
                     owner.AddChild(bullet);
+
+                    bullet.SetProcess(false);
+                    bullet.SetPhysicsProcess(false);
+                    bullet.Hide();
                 }
                 break;
 

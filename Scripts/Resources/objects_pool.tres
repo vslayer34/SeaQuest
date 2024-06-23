@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("1_d6hnr")
 BulletScene = ExtResource("1_45x5n")
-BulletPoolCount = 10
+BulletPoolCount = 20
