@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0a14puh288eg"]
+[gd_scene load_steps=9 format=3 uid="uid://d0a14puh288eg"]
 
 [ext_resource type="Texture2D" uid="uid://cncx5ntwy2wuf" path="res://Assets/Player/player.png" id="1_7ssrc"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="2_nddxp"]
+[ext_resource type="PackedScene" uid="uid://chyjpynf1cccu" path="res://Scenes/Behaviours/shoot_bullets.tscn" id="3_otku7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkkee"]
 atlas = ExtResource("1_7ssrc")
@@ -45,3 +46,6 @@ autoplay = "default"
 frame_progress = 0.779313
 script = ExtResource("2_nddxp")
 _speed = 75.0
+
+[node name="ShootBullets" parent="." instance=ExtResource("3_otku7")]
+position = Vector2(13, 2)

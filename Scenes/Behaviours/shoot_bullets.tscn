@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://chyjpynf1cccu"]
+[gd_scene load_steps=3 format=3 uid="uid://chyjpynf1cccu"]
+
+[ext_resource type="Script" path="res://Scripts/Behaviours/BulletShooter.cs" id="1_01mad"]
+[ext_resource type="Resource" uid="uid://ekceio4c5nb1" path="res://Scripts/Resources/objects_pool.tres" id="2_sk27c"]
 
 [node name="ShootBullets" type="Node2D"]
+script = ExtResource("1_01mad")
+ObjectPool = ExtResource("2_sk27c")

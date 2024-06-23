@@ -1,15 +1,37 @@
 using Godot;
+using SeaQuest.Scripts.Helper;
+using SeaQuest.Scripts.Resources.BaseClass;
 using System;
 
 public partial class BulletShooter : Node2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	[ExportGroup("Required Nodes")]
+	[Export]
+	public ObjectsPool ObjectPool { get; private set; }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	private Bullet _firedBullet;
+
+
+
+	// Game Loop Methods---------------------------------------------------------------------------
+    public override void _Input(InputEvent @event)
+    {
+        if (Input.IsActionJustPressed(InputMapActions.InputAction.SHOOT))
+		{
+			Shoot();
+		}
+    }
+
+
+	// Member Methods------------------------------------------------------------------------------
+
+	private void Shoot()
 	{
+		GD.Print(ObjectPool.BulletPool.Count);
+		GD.Print(_firedBullet);
+
+		_firedBullet = ObjectPool.GetBullet();
+
+		GD.Print(_firedBullet);
 	}
 }

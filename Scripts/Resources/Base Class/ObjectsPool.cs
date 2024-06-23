@@ -16,6 +16,12 @@ public partial class ObjectsPool : Resource
     public List<Bullet> BulletPool { get; private set; } = new List<Bullet>();
     
     
+    /// <summary>
+    /// Create the pool and fill it with the relavent objects
+    /// </summary>
+    /// <param name="owner">The Parent node</param>
+    /// <param name="poolObject">The object to be created</param>
+    /// <typeparam name="T"></typeparam>
     public void FillThePool<T>(Node owner, T poolObject) where T : new()
     {
         switch (poolObject)
@@ -28,9 +34,7 @@ public partial class ObjectsPool : Resource
                     
                     owner.AddChild(bullet);
 
-                    bullet.SetProcess(false);
-                    bullet.SetPhysicsProcess(false);
-                    bullet.Hide();
+                    EnablePoolObject<Bullet>(bullet, false);
                 }
                 break;
 
@@ -39,31 +43,46 @@ public partial class ObjectsPool : Resource
         }
     }
 
-
-    public T GetObject<T>(T poolObject) where T : class
-    {
-        switch (poolObject)
-        {
-            case Bullet bullet:
-                bullet = GetFromPool<Bullet>(BulletPool);
-                return poolObject;    
-            
-            default:
-                return null;
-        }
-    }
+    /// <summary>
+    /// Get a bullet from the bullet pool
+    /// </summary>
+    /// <returns>stored bullet fint the pool</returns>
+    public Bullet GetBullet() => GetFromPool<Bullet>(BulletPool);
 
 
-    private T GetFromPool<T>(List<T> pool) where T : class
+    /// <summary>
+    /// Get an item form the pool and enable it
+    /// </summary>
+    /// <param name="pool">The pool that contains the objects</param>
+    /// <typeparam name="T">The type of the objects to be returned</typeparam>
+    /// <returns>an enabled version of the pool</returns>
+    private T GetFromPool<T>(List<T> pool) where T : Node2D
     {
         foreach (T obj in pool)
         {
             if (obj != null)
             {
+                pool.Remove(obj);
+                EnablePoolObject<T>(obj, true);
                 return obj;
             }
         }
 
         return null;
     }
+
+
+    /// <summary>
+    /// Enable/Disable the visibility and both normal process and physical process
+    /// </summary>
+    /// <param name="poolObject">The target object</param>
+    /// <param name="enabled">The stats of the object enabled or disabled</param>
+    /// <typeparam name="T">Any object that inherits Node2D</typeparam>
+    private void EnablePoolObject<T>(T poolObject, bool enabled) where T : Node2D
+    {
+        poolObject.SetProcess(enabled);
+        poolObject.SetPhysicsProcess(enabled);
+        poolObject.Visible = enabled;
+    }
+
 }
